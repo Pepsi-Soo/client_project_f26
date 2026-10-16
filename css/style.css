@@ -1,0 +1,320 @@
+/* I choose to use the UM recommened typefaces*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap");
+
+/* For every page*/
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #F7F7F5;
+    color: #131516;
+    font-family: "Nunito Sans", Arial, sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+}
+
+strong{
+    font-weight: 700;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a{
+    color: #2F65A7;
+}
+
+/* Visible keyborad foucs*/
+
+:focus-visible{
+    outline: 3px solid #2F65A7;
+    outline-offset: 3px;
+}
+
+/* Separate with dark blue*/
+aside :focus-visible,
+footer :focus-visible {
+    outline-color: #FFCB05;
+}
+
+
+/* Hide it until it gets keyboard focus*/
+.skip-link{
+    position: absolute;
+    top: -4rem;
+    left: 1rem;
+    padding: 0.75rem;
+    background-color: #FFCB05;
+    color: #00274C;
+    font-weight: 700;
+}
+
+.skip-link:focus{
+    top: 0;
+}
+
+/* Header design*/
+header{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #FFFFFF;
+    border-bottom: 0.3rem solid #00274C;
+}
+
+/* Logo Design*/
+.logo{
+    flex: 0 0 auto;
+}
+
+.logo img{
+    width: 4rem;
+}
+
+
+/* Navigation for grid 2x2 layout */
+nav{
+    flex: 1 1 12rem;
+}
+
+nav ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+}
+
+nav li{
+    flex: 1 1 40%;
+}
+
+nav a{
+    display: flex;
+    background-color: #00274C;
+    height: 100%;
+    min-height: 3rem;
+    padding: 0.5rem;
+    align-items: center;
+    justify-content: center;
+
+    color: #FFFFFF;
+    font-family: "Montserrat", Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.3;
+    text-align: center;
+    text-decoration: none;
+    border: 0.25rem solid transparent;
+    border-radius: 0.5rem;
+}   
+
+nav a:hover{
+    background-color: #2F65A7;
+    text-decoration: underline;
+}
+
+/* Active page for maize background and bold and underline*/
+nav a[aria-current="page"]{
+    background-color: #FFF4CC;
+    border-bottom-color: #FFCB05;
+    color: #131516;
+    font-weight: 700;
+    text-decoration: underline;
+    
+}
+
+/* Main for content*/
+main {
+    max-width: 70rem;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+h1, h2, h3{
+    font-family: "Montserrat", Arial, sans-serif;
+    color: #00274C;
+    line-height: 1.25;
+    margin-bottom: 0.75rem;
+}
+
+h1 {
+    font-size: 1.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.3rem solid #FFCB05;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+}
+
+h2{
+    font-size: 1.5rem;
+}
+
+h3{
+    font-size: 1.2rem;
+}
+
+p{
+    margin-bottom: 1rem;
+}
+
+/* since the reset delete the bullets, so it need to be reset here*/
+main ul, main ol{
+    margin-bottom: 1rem;
+    padding-left: 1.25rem;
+}
+
+main ul{
+    list-style: disc;
+}
+
+main ol{
+    list-style: decimal;
+}
+
+main li{
+    margin-bottom: 0.5rem;
+}
+
+section{
+    margin-bottom: 2.5rem;
+}
+
+
+/* use card grid to fit 1 column with small screen*/
+.card-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+article{
+    background-color: #FFFFFF;
+    border: 1px solid #D9D9D6;
+    border-top: 0.3rem solid #FFCB05;
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.card-grid article{
+    margin-bottom: 0;
+}
+
+/* Images style*/
+figure{
+    max-width: 40rem;
+    margin: 1.5rem 0;
+}
+
+figure img,
+section > img{
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+figcaption{
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    font-style: italic;
+}
+
+
+/* Youtube style*/
+iframe{
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border: 0;
+}
+
+
+/* Table style, should scroll sideways on phones for smaller screen*/
+.table-warpper{
+    overflow-x: auto;
+}
+
+table{
+    min-width: 36rem;
+    border-collapse: collapse;
+    background-color: #FFFFFF;
+}
+
+caption{
+    padding: 0.75rem;
+    font-weight: 700;
+    text-align: left;
+}
+
+th, td{
+    padding: 0.75rem;
+    border: 1px solid #D9D9D6;
+    text-align: left;
+    vertical-align: top;
+}
+
+thead th{
+    background-color: #00274C;
+    color: #FFFFFF;
+}
+
+
+/* for aside box and bottun*/
+aside{
+    padding: 1.5rem;
+    background-color: #00274C;
+    color:#FFFFFF;
+    border-radius: 0.5rem;
+}
+
+aside h2{
+    color: #FFFFFF;
+}
+
+aside a{
+    color: #FFCB05;
+    background-color: #00274C;
+}
+
+.button{
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding: 1.5rem;
+    background-color: #FFCB05;
+    color: #00274C;
+    font-weight: 700;
+    border-radius: 0.5rem;
+}
+
+
+/*footer style*/
+
+footer{
+    padding: 2rem;
+    background-color: #00274C;
+    color:#FFFFFF;
+    border-top: 0.5rem solid #FFCB05;
+    text-align: center;
+}
+
+footer p,
+footer address{
+    margin-bottom: 1rem;
+}
+
+footer a{
+    color: #FFCB05;
+    background-color: #00274C;
+}
