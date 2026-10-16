@@ -237,7 +237,7 @@ iframe{
 
 
 /* Table style, should scroll sideways on phones for smaller screen*/
-.table-warpper{
+.table-wrapper{
     overflow-x: auto;
 }
 
