@@ -87,14 +87,10 @@ nav{
 }
 
 nav ul{
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 0.5rem;
     list-style: none;
-}
-
-nav li{
-    flex: 1 1 40%;
 }
 
 nav a{
