@@ -10,7 +10,7 @@
 <body>
     <a href="#main" class="skip-link">Skip to Main Content</a>
 
-    <header>
+    <header id="top">
         <!--to help user back home page, i insert the index.html link to the logo-->
         <a href="index.html" class="logo">
             <img src="images/UMSI_signature_vertical_informal_solidblue.jpg" alt="UMSI Logo">
@@ -109,15 +109,24 @@
             <a href="starting.html">Please go to the starting page to explore more information.</a>
         </section>
 
-        <!-- Content taken & modified from UMGPT with the prompt, "for the same content write me some intro content and resources for a prep page using the ELO content below" - this was after I had asked for content for the home page. " UMGPT. (2026). UMGPT ( GPT-5.6 Sol September 7th version) [Large language model]. -->
+        <!--The below is the original content, my content is from "SI 539 Client Project - ELO Content", https://docs.google.com/document/d/1gHynMAyC6Cnh_33jKRy78nMDCtK5lGer12HzChE2Mxc/edit?usp=sharing, September 16th, 2026-->
+        <!-- Content taken & modified from UMGPT with the prompt, "Write me a webpage of intro content to help meet the following requirements - this is for the start page": and then pasted in the client objectives & project requirements"
+        UMGPT. (2026). UMGPT ( GPT-5.6 Sol September 7th version) [Large language model]. -->
     </main>
+
+    <!-- Here's the back to top link, appears after scrolling down, returns to the top of the page -->
+    <a href="#top" class="back-to-top"><span aria-hidden="true">&uarr;</span> Back to top</a>
 
     <footer>
         <p>University of Michigan School of Information | <a href="https://www.si.umich.edu/programs/engaged-learning/about-engaged-learning-office">Engaged Learning Office</a></p>
         <address>
             <a href="mailto:umsi.engagement@umich.edu">umsi.engagement@umich.edu</a>
         </address>
-        <p>&copy; 2026 Regents of the University of Michigan</p>
+        <p>&copy; <span id="current-year">2026</span> Regents of the University of Michigan</p>
     </footer>
+
+    <!-- For deliverable#3, updates the footer year automatically, and back to top to find navigation of all contents to be unique -->
+    <script src="js/footer-year.js"></script>
+    <script src="js/back-to-top.js"></script>
 </body>
 </html>

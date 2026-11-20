@@ -60,20 +60,17 @@ footer :focus-visible {
     top: 0;
 }
 
-/* Header design*/
+/* Revised by feedback Header design: logo on top, menu list below */
 header{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 1rem;
     padding: 1rem;
     background-color: #FFFFFF;
     border-bottom: 0.3rem solid #00274C;
 }
 
-/* Logo Design*/
+/* Revised by feedback Logo Design*/
 .logo{
-    flex: 0 0 auto;
+    display: inline-block;
+    margin-bottom: 0.75rem;
 }
 
 .logo img{
@@ -81,50 +78,38 @@ header{
 }
 
 
-/* Navigation for grid 2x2 layout */
-nav{
-    flex: 1 1 12rem;
-}
-
+/* Revised by feedback Navigation: compact vertical menu list on mobile */
 nav ul{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
+    grid-template-columns: 1fr;
     list-style: none;
+    border-top: 1px solid #D9D9D6;
 }
 
 nav a{
-    display: flex;
-    background-color: #00274C;
-    height: 100%;
+    display: block;
     min-height: 3rem;
-    padding: 0.5rem;
-    align-items: center;
-    justify-content: center;
-
-    color: #FFFFFF;
+    padding: 0.75rem 0.5rem 0.75rem 1rem;
+    color: #00274C;
     font-family: "Montserrat", Arial, sans-serif;
     font-size: 1rem;
-    line-height: 1.3;
-    text-align: center;
+    line-height: 1.5;
     text-decoration: none;
-    border: 0.25rem solid transparent;
-    border-radius: 0.5rem;
-}   
+    border-bottom: 1px solid #D9D9D6;
+    border-left: 0.25rem solid transparent;
+}
 
 nav a:hover{
-    background-color: #2F65A7;
+    background-color: #F7F7F5;
     text-decoration: underline;
 }
 
-/* Active page for maize background and bold and underline*/
+/* Active page: maize left bar + light maize background + bold + underline */
 nav a[aria-current="page"]{
     background-color: #FFF4CC;
-    border-bottom-color: #FFCB05;
-    color: #131516;
+    border-left-color: #FFCB05;
     font-weight: 700;
     text-decoration: underline;
-    
 }
 
 /* Main for content*/
@@ -308,4 +293,166 @@ footer address{
 footer a{
     color: #FFCB05;
     background-color: #00274C;
+}
+
+/* Deliverable#3: 404 page */
+.error-code{
+    margin-bottom: 0;
+    font-family: "Montserrat", Arial, sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #00274C;
+}
+
+
+/* Unique for deliverable#3: Back to top link: hidden at the top of the page, shown after scrolling */
+html{
+    scroll-behavior: smooth;
+}
+
+.back-to-top{
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 10;
+    min-height: 3rem;
+    padding: 0.75rem 1rem;
+    background-color: #00274C;
+    color: #FFFFFF;
+    font-family: "Montserrat", Arial, sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    border: 0.2rem solid #FFCB05;
+    border-radius: 0.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.back-to-top.show{
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover{
+    background-color: #2F65A7;
+    text-decoration: underline;
+}
+
+.back-to-top:focus-visible{
+    outline-color: #FFCB05;
+}
+
+
+/* For deliverable#3: Tablet and desktop view (768px and wider) */
+@media (min-width: 48rem) {
+
+    /* Header change: logo and navigation side by side in one bar */
+    header{
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        padding: 1rem 2rem;
+    }
+
+    .logo{
+        margin-bottom: 0;
+    }
+
+    .logo img{
+        width: 5rem;
+    }
+
+    nav{
+        flex: 1;
+    }
+
+    /* Navigation change: the vertical list becomes one row of 4 tabs */
+    nav ul{
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.5rem;
+        border-top: 0;
+    }
+
+    nav a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5rem;
+        background-color: #00274C;
+        color: #FFFFFF;
+        text-align: center;
+        border: 0.25rem solid transparent;
+        border-radius: 0.5rem;
+    }
+
+    nav a:hover{
+        background-color: #2F65A7;
+    }
+
+    nav a[aria-current="page"]{
+        background-color: #FFF4CC;
+        border-color: transparent;
+        border-bottom-color: #FFCB05;
+        color: #131516;
+    }
+
+    /* Main content change: more breathing room and larger headings */
+    main{
+        padding: 2rem;
+    }
+
+    h1{
+        font-size: 2.5rem;
+    }
+
+    h2{
+        font-size: 1.75rem;
+    }
+
+    /* Large view, Interactive change for deliverable#3: Cards lift slightly when hovered with a mouse */
+    .card-grid article{
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card-grid article:hover{
+        transform: translateY(-0.25rem);
+        box-shadow: 0 0.5rem 1rem rgba(0, 39, 76, 0.15);
+    }
+
+    /* For deliverable#3: Table fits the wider screen, no sideways scrolling */
+    table{
+        width: 100%;
+    }
+
+    /* Footer for deliverable#3: I use 3 columns in one row instead of stacked */
+    footer{
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem 3rem;
+    }
+
+    footer p,
+    footer address{
+        margin-bottom: 0;
+    }
+}
+
+
+/* For accessibility: turn off motion for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    html{
+        scroll-behavior: auto;
+    }
+
+    *{
+        transition: none !important;
+    }
+
+    .card-grid article:hover{
+        transform: none;
+    }
 }
